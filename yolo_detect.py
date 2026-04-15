@@ -163,7 +163,7 @@ while True:
         frame = cv2.resize(frame,(resW,resH))
 
     # Run inference on frame
-    results = model(frame, verbose=False)
+    results = model(frame, verbose=False, classes=[0])
 
     # Extract results
     detections = results[0].boxes
