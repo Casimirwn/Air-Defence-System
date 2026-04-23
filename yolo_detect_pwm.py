@@ -142,8 +142,8 @@ bbox_colors = [(164,120,87), (68,148,228), (93,97,209), (178,182,133), (88,159,1
 #   PWM channel 1 = GPIO 13 (physical pin 33) -> tilt servo
 # Servos expect 50Hz PWM. Duty cycle: 2.5% = 0deg, 7.5% = 90deg, 12.5% = 180deg
 if SERVO_AVAILABLE:
-    pan_pwm = HardwarePWM(pwm_channel=pan_pin, hz=50, chip=2)   # chip=2 for Pi 5
-    tilt_pwm = HardwarePWM(pwm_channel=tilt_pin, hz=50, chip=2)
+    pan_pwm = HardwarePWM(pwm_channel=pan_pin, hz=50, chip=0)   # chip=2 for Pi 5
+    tilt_pwm = HardwarePWM(pwm_channel=tilt_pin, hz=50, chip=0)
     pan_pwm.start(servo_angle_to_duty(90))   # start centered
     tilt_pwm.start(servo_angle_to_duty(90))
     print(f'Hardware PWM servos initialized: pan=channel {pan_pin}, tilt=channel {tilt_pin}')
