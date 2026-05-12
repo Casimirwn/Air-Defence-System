@@ -200,6 +200,9 @@ while True:
     if resize == True:
         frame = cv2.resize(frame,(resW,resH))
 
+    # 180 flip
+    frame = cv2.flip(frame, -1)
+    
     # Run inference on frame
     results = model(frame, verbose=False, classes=[0])
 
