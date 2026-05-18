@@ -169,8 +169,8 @@ if SERVO_AVAILABLE:
 current_pan = 90.0
 current_tilt = 90.0
 
-# Servo update timer - only update every ~1 second
-servo_update_interval = 1.0  # seconds
+# Servo update timer
+servo_update_interval = 0  # seconds
 last_servo_update = 0.0
 
 # Rolling buffer for smoothing detected object center position
@@ -341,10 +341,10 @@ while True:
     if key == ord('q') or key == ord('Q'): # Press 'q' to quit
         break
     elif key == ord('f') or key == ord('F'): # Press 'f' to fire
-        if SERVO_AVAILABLE:
-            trigger_servo.angle = 45 # NOT CALIBRATED PROPERLY YET
-            time.sleep(1)
+        if SERVO_AVAILABLE: # Should be calibrated properly depending on what position you put the servo in on the work.
             trigger_servo.angle = 0
+            time.sleep(1)
+            trigger_servo.angle = 80
     elif key == ord('s') or key == ord('S'): # Press 's' to pause inference
         cv2.waitKey()
     elif key == ord('p') or key == ord('P'): # Press 'p' to save a picture of results on this frame
