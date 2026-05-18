@@ -1,4 +1,4 @@
-# Group 03 - Air Defense System
+# Air Defense System
 
 ## Table of Contents
 
