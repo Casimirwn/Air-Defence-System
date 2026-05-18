@@ -105,6 +105,8 @@ The frame is displayed and keypresses are checked — F fires the trigger servo,
 
 Cleanup — on quit, the camera is released, servos return to 90°, and the PCA9685 is deinitialized.
 
+We used the following script as a base, which we modified to suit our purposes better (https://github.com/EdjeElectronics/Train-and-Deploy-YOLO-Models/blob/main/yolo_detect.py).
+
 ---
 
 ## 6. Wiring Diagram
@@ -132,6 +134,7 @@ A switch is used to turn the DC motors on and off. We also used rechargeable 1.2
 ---
 
 ## 9. Inspirations
+We used a ready made script as a base, which we modified. Additionally we used it as a guide for downloading the libraries: https://www.youtube.com/watch?v=z70ZrSZNi-8
 
 In earlier iterations of the project we used a different 3D model focused on getting the camera working rather than firing: [Thingiverse #4710301](https://www.thingiverse.com/thing:4710301).
 
