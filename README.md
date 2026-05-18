@@ -15,7 +15,6 @@
 8. [Videos](#8-videos)
 9. [Inspirations](#9-inspirations)
 10. [Reflections and Development Ideas](#10-reflections-and-development-ideas)
-11. [Division of Work](#11-division-of-work)
 
 ---
 
@@ -65,7 +64,7 @@ For assembly we primarily used glue, tape, and screws. We screwed a servo motor 
 
 ## 3. Components
 
-| # | Component |
+| # | Components |
 |---|-----------|
 | 1 | Servo Motor – 4.8–6 VDC – Standard – Analog – 180° (SER0020) × 2 |
 | 2 | Raspberry Pi 5 |
@@ -86,11 +85,14 @@ The end result is a fully functional system: a Raspberry Pi-based air defense se
 ---
 
 ## 5. Code
+Scripts in the Tests folder were used to test components.
+"Servomotor.py" was used to test a single servomotor.
+"Servomotor2.py" was used to test and control 2 servomotors at the same time.
+"yolo_detect_track.py" is the original script used to test out the yolo11n camera detection.
+"yolo_detect_pca9685.py" was used to test out the pca9685 board with our 2 servmotors while doing camera detection and tracking
 
-The code is available on GitHub:  
-👉 [yolo_track_pca9685.py](https://github.com/Casimirwn/Air-Defence-System/blob/main/yolo_track_pca9685.py)
-
-The code makes use of a pre-existing base and was developed with the help of AI tools.
+THE MAIN SCRIPT
+"yolo_track_pca9685.py" is the main script that we use in our finished product. The script uses the rpicam to detect objects with the yolo11n model and then calculates the movement for the servo motors and also moves them accordingly.
 
 ---
 
@@ -140,14 +142,3 @@ The end result may not be technically cutting-edge, but given where we started a
 - Optimized model performance on the Raspberry Pi 5, or switching to a lighter model specifically designed for edge devices
 
 There were plenty more ideas. This kind of system is easy to extend step by step, and many of the ideas listed above would likely have been achievable within the course timeframe with more time available. Since this was only one course, we had to prioritize and accept that we couldn't do everything. We are still satisfied with what we managed to build.
-
----
-
-## 11. Division of Work
-
-At the start of the project we noticed that it wasn't efficient for everyone to be looking at the same screen. We therefore divided up the tasks to work more effectively.
-
-- **Casimir & Ville** were responsible for the code — camera detection and motor movement.
-- **Kaarlo & Tomi** were responsible for printing the 3D models and assembling them.
-
-We also helped each other out as needed, especially when not everyone could make it to the workshop.
