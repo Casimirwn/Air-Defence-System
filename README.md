@@ -94,6 +94,17 @@ Scripts in the Tests folder were used to test components.
 THE MAIN SCRIPT
 "yolo_track_pca9685.py" is the main script that we use in our finished product. The script uses the rpicam to detect objects with the yolo11n model and then calculates the movement for the servo motors and also moves them accordingly.
 
+On startup the script initializes all the required libraries for the code.
+The main loop runs the whole time.
+
+A frame is grabbed from the source and flipped 180° (to compensate for the upside-down camera mount).
+YOLO11n runs inference, filtering for class 0 (person) above the confidence threshold.
+Bounding boxes and confidence labels are drawn on the frame.
+Every time the servo tracking logic runs: it takes the highest-confidence detection, calculates the center of its bounding box, smooths the position over a 5-frame rolling buffer, computes how far off-center the target is (−1 to +1 error), and moves pan/tilt by up to 10° per update. A small deadzone prevents twitching on minor wobbles.
+The frame is displayed and keypresses are checked — F fires the trigger servo, S pauses, P saves a screenshot, Q quits.
+
+Cleanup — on quit, the camera is released, servos return to 90°, and the PCA9685 is deinitialized.
+
 ---
 
 ## 6. Wiring Diagram
